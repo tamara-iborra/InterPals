@@ -1,145 +1,138 @@
+:root {
+  --header-height: 85px;
+
+  --background-color: #fff;
+  --text-color: #1d1d1f;
+  --label-color: #6e6e73;
+  --border-color: #f0f0f2;
+  --input-border: #e1e1e5;
+
+  --primary-color: #000;
+  --primary-color-hover: #4a4a4a;
+
+  --secondary-color: #f5f5f7;
+  --secondary-color-hover: #d5d5d5;
+
+  --muted-2: #4a4a4a;
+}
+
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter";
-background: #fff;
-color: #1d1d1f;
-line-height: 1.5;
-}
-
-/* Botones */
-.btn, .btn-big, .btn-secondary {
-text-decoration: none;
-border-radius: 12px;
-padding: 10px 22px;
-transition: 0.25s ease;
-display: inline-block;
-}
-
-.btn {
-background: #000;
-color: #fff;
-}
-
-.btn-secondary {
-background: #f5f5f7;
-color: #1d1d1f;
-}
-
-.btn-big {
-background: #000;
-color: #fff;
-padding: 16px 34px;
-font-size: 1.05rem;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter";
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.5;
 }
 
 /* Header */
 .header {
-display: flex;
-justify-content: space-between;
-padding: 20px 40px;
-align-items: center;
-border-bottom: 1px solid #f0f0f2;
+  position: sticky;
+  top: 0;
+  display: flex;
+  height: var(--header-height);
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: var(--background-color);
+  border-bottom: 1px solid #f0f0f2;
 }
 
 .header .logo {
-font-weight: 600;
-font-size: 1.6rem;
+  all: unset;
+  cursor: pointer;
 }
 
-/* Hero */
-.hero {
-text-align: center;
-padding: 120px 20px;
+.header .logo h1 {
+  font-weight: 600;
+  font-size: 1.6rem;
 }
 
-.hero h2 {
-font-size: 2.8rem;
-font-weight: 600;
-margin-bottom: 20px;
+.header nav {
+  display: flex;
+  gap: 12px;
 }
 
-.hero p {
-color: #6e6e73;
-margin-bottom: 30px;
-font-size: 1.2rem;
+/* Buttons */
+.btn,
+.btn-big,
+.btn-secondary {
+  display: inline-block;
+  min-height: 44px;
+  min-width: 120px;
+  border-radius: 12px;
+  padding: 10px 22px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.25s ease;
 }
 
-.hero-img {
-margin-top: 30px;
-max-width: 700px;
-border-radius: 22px;
+.btn {
+  text-align: center;
+  background: var(--primary-color);
+  color: var(--background-color);
 }
 
-/* Features */
-.features {
-display: flex;
-justify-content: space-around;
-padding: 60px 20px;
-text-align: center;
+.btn:hover {
+  background: var(--primary-color-hover);
 }
 
-.feature h3 {
-margin-bottom: 10px;
+.btn-secondary {
+  background: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.btn-secondary:hover {
+  background: var(--secondary-color-hover);
+}
+
+.btn-big {
+  padding: 16px 34px;
+  font-size: 1.05rem;
+  min-width: 180px;
+}
+
+.btn-full {
+  width: 100%;
 }
 
 /* Form container */
 .form-container {
-max-width: 400px;
-margin: 100px auto;
-padding: 40px;
-background: #fff;
-border-radius: 20px;
-border: 1px solid #f0f0f2;
+  max-width: 480px;
+  margin: 120px auto;
+  padding: 36px;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #f0f0f2;
 }
 
-input {
-width: 100%;
-margin-bottom: 20px;
-padding: 14px;
-border-radius: 12px;
-border: 1px solid #e1e1e5;
-background: #f5f5f7;
+.form-container .title {
+  padding-bottom: 16px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0px;
+  padding-right: 8px;
+  gap: 16px;
+}
+
+.form-container input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid var(--input-border);
+  background: var(--secondary-color);
 }
 
 /* Footer */
 .footer {
-text-align: center;
-padding: 40px 20px;
-color: #6e6e73;
-}
-
-.about {
-max-width: 900px;
-margin: 60px auto;
-padding: 0 20px;
-text-align: center;
-}
-
-.about h2 {
-font-size: 2.2rem;
-font-weight: 600;
-margin-bottom: 20px;
-}
-
-.about p {
-font-size: 1.1rem;
-color: #4a4a4a;
-margin-bottom: 30px;
-line-height: 1.6;
-}
-
-.about ul {
-list-style: none;
-padding: 0;
-}
-
-.about ul li {
-margin: 10px 0;
-font-size: 1rem;
-color: #1d1d1f;
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--label-color);
 }
